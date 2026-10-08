@@ -1,5 +1,4 @@
 #include "led/led.h"
-#include <assert.h>
 #include <stddef.h>
 
 int led_init(struct led *led, const struct led_io *io) {
