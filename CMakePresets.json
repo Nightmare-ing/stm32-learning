@@ -22,6 +22,13 @@
       "configurePreset": "f103-hal",
       "jobs": 0,
       "targets": ["stm32_template_lab1_led"]
+    },
+    {
+      "name": "f103-hal-lab2-key2led",
+      "displayName": "Lab2: Control Led with Key",
+      "configurePreset": "f103-hal",
+      "jobs": 0,
+      "targets": ["stm32_template_lab2_key2led"]
     }
   ]
 }

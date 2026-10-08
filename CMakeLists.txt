@@ -75,6 +75,7 @@ add_library(${PROJECT_NAME}::target_abi
 # Platform-independent Components
 # ======================================================================
 add_subdirectory(components/led)
+add_subdirectory(components/button)
 
 
 # ======================================================================
