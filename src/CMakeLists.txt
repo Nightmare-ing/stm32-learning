@@ -1,0 +1,1 @@
+add_subdirectory(labs/lab1_led EXCLUDE_FROM_ALL)

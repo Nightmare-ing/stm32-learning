@@ -1,0 +1,7 @@
+[presets.f103]
+chip = "STM32F103ZE"
+speed = 10000
+protocol = "Swd"
+verify = true
+chip_erase = false # erase sectors
+

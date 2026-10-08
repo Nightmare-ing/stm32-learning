@@ -1,0 +1,27 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "f103-hal",
+      "displayName": "STM32F103 (HAL Driver)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/f103-hal",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-toolchain.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOARD": "ATK_WARSHIP_F103",
+        "STM32_DRIVER_TYPE": "HAL",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "f103-hal-lab1-led",
+      "displayName": "Lab1: Led Blink",
+      "configurePreset": "f103-hal",
+      "jobs": 0,
+      "targets": ["stm32_template_lab1_led"]
+    }
+  ]
+}
