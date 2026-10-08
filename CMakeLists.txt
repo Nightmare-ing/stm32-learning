@@ -94,5 +94,9 @@ if(CMAKE_CROSSCOMPILING)
 
     # Final consumer
     add_subdirectory(src)
+else()
+    message(STATUS "Host build: PC Unit Test Mode")
+    enable_testing()
+    add_subdirectory(tests)
 endif()
 
