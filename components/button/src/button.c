@@ -26,7 +26,7 @@ int butn_tick(struct butn *key) {
     case BUTN_STATE_RELEASED:
         if (is_pressed) {
             key->state = BUTN_STATE_DEBOUNCE_PRESS;
-            key->tick_cnt = 0;
+            key->tick_cnt++;
         }
         break;
 
@@ -46,7 +46,7 @@ int butn_tick(struct butn *key) {
     case BUTN_STATE_PRESSED:
         if (!is_pressed) {
             key->state = BUTN_STATE_DEBOUNCE_RELEASE;
-            key->tick_cnt = 0;
+            key->tick_cnt++;
         }
         break;
 
