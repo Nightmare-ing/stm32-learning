@@ -30,3 +30,5 @@ int main(void) {
 
     return 0;
 }
+
+void SysTick_Handler(void) { HAL_IncTick(); }
