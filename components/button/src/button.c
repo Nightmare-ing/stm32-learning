@@ -26,7 +26,7 @@ int butn_tick(struct butn *key) {
     case BUTN_STATE_RELEASED:
         if (is_pressed) {
             key->state = BUTN_STATE_DEBOUNCE_PRESS;
-            key->tick_cnt++;
+            key->tick_cnt = 1; // Start counting ticks for debounce
         }
         break;
 
@@ -40,13 +40,14 @@ int butn_tick(struct butn *key) {
         } else {
             // bounce failed, return to released state
             key->state = BUTN_STATE_RELEASED;
+            key->tick_cnt = 0; // Reset tick count
         }
         break;
 
     case BUTN_STATE_PRESSED:
         if (!is_pressed) {
             key->state = BUTN_STATE_DEBOUNCE_RELEASE;
-            key->tick_cnt++;
+            key->tick_cnt = 1; // Start counting ticks for debounce
         }
         break;
 
@@ -60,6 +61,7 @@ int butn_tick(struct butn *key) {
         } else {
             // bounce failed, return to pressed state
             key->state = BUTN_STATE_PRESSED;
+            key->tick_cnt = 0; // Reset tick count
         }
         break;
     }
