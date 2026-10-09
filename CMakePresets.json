@@ -13,6 +13,15 @@
         "STM32_DRIVER_TYPE": "HAL",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       }
+    },
+    {
+      "name": "host-test",
+      "displayName": "Host PC Unit Tests",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
     }
   ],
   "buildPresets": [
@@ -22,6 +31,30 @@
       "configurePreset": "f103-hal",
       "jobs": 0,
       "targets": ["stm32_template_lab1_led"]
+    },
+    {
+      "name": "f103-hal-lab2-key2led",
+      "displayName": "Lab2: Control Led with Key",
+      "configurePreset": "f103-hal",
+      "jobs": 0,
+      "targets": ["stm32_template_lab2_key2led"]
+    },
+    {
+      "name": "host-test",
+      "displayName": "Host PC Unit Tests (Build)",
+      "description": "Build all unit tests on host",
+      "configurePreset": "host-test"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "host-test",
+      "displayName": "Run Host Unit Tests",
+      "description": "Run unit test suite via CTest on host PC",
+      "configurePreset": "host-test",
+      "output": {
+        "outputOnFailure": true
+      }
     }
   ]
 }

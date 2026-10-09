@@ -75,6 +75,7 @@ add_library(${PROJECT_NAME}::target_abi
 # Platform-independent Components
 # ======================================================================
 add_subdirectory(components/led)
+add_subdirectory(components/button)
 
 
 # ======================================================================
@@ -93,5 +94,9 @@ if(CMAKE_CROSSCOMPILING)
 
     # Final consumer
     add_subdirectory(src)
+else()
+    message(STATUS "Host build: PC Unit Test Mode")
+    enable_testing()
+    add_subdirectory(tests)
 endif()
 
