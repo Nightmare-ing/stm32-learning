@@ -26,18 +26,18 @@
   ],
   "buildPresets": [
     {
-      "name": "f103-hal-lab1-led",
-      "displayName": "Lab1: Led Blink",
+      "name": "f103-hal-lab1-1-led",
+      "displayName": "Lab1.1: Led Blinking",
       "configurePreset": "f103-hal",
       "jobs": 0,
-      "targets": ["stm32_template_lab1_led"]
+      "targets": ["stm32_learning_lab1_1_led"]
     },
     {
-      "name": "f103-hal-lab2-key2led",
-      "displayName": "Lab2: Control Led with Key",
+      "name": "f103-hal-lab2-1-key2led",
+      "displayName": "Lab2.1: Control Led with Key",
       "configurePreset": "f103-hal",
       "jobs": 0,
-      "targets": ["stm32_template_lab2_key2led"]
+      "targets": ["stm32_template_lab2_1_key2led"]
     },
     {
       "name": "host-test",

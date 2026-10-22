@@ -1,9 +1,10 @@
+#include "board/board.h"
 #include "board/led.h"
 #include "led/led.h"
 #include "stm32f1xx_hal.h"
 
 int main(void) {
-    HAL_Init();
+    board_init();
 
     struct led led0;
     board_led_bind(BOARD_LED_0, &led0);

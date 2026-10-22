@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.25...4.4)
-project(stm32_template
+project(stm32_learning
     VERSION 1.0
-    DESCRIPTION "Template for STM32 projects"
+    DESCRIPTION "Labs while learning STM32 with ATK's courses"
     LANGUAGES C ASM)
 set(STM32_LEARNING_NAMESPACE stm32-template)
 
