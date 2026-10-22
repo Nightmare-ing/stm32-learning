@@ -1,4 +1,14 @@
 # ======================================================================
+# Verified Dependency Tags for STM32F1 Family
+# ======================================================================
+set(STM32_CMSIS_DEVICE_TAG "v4.3.5" CACHE STRING "Git tag for cmsis-device-stm32f1 repository")
+set(STM32_HAL_DRIVER_TAG "v1.1.10" CACHE STRING "Git tag for stm32f1xx-hal-driver repository")
+
+# Preferred ARM CMSIS 6 tag
+set(ARM_CMSIS_TAG "v6.3.0" CACHE STRING "Git tag for ARM CMSIS 6 repository")
+
+
+# ======================================================================
 # Flags for all static libraries and ELF
 # ======================================================================
 add_library(bsp_stm32f1_mcu_config INTERFACE)

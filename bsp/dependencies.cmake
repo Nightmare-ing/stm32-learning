@@ -4,7 +4,7 @@ include(FetchContent)
 FetchContent_Declare(
     arm_cmsis
     GIT_REPOSITORY https://github.com/ARM-software/CMSIS_6.git
-    GIT_TAG v6.3.0
+    GIT_TAG ${ARM_CMSIS_TAG}
     GIT_SHALLOW TRUE
     # Because CMSIS lib doesn't have a CMakeLists.txt, those two following keywords won't work, but just put here for future reference
     SYSTEM
@@ -15,7 +15,7 @@ FetchContent_Declare(
 FetchContent_Declare(
     stm32_cmsis
     GIT_REPOSITORY https://github.com/STMicroelectronics/cmsis-device-${MCU_FAMILY_SHORT}.git
-    GIT_TAG v4.3.5
+    GIT_TAG ${STM32_CMSIS_DEVICE_TAG}
     GIT_SHALLOW TRUE
     SYSTEM
     EXCLUDE_FROM_ALL
@@ -25,7 +25,7 @@ FetchContent_Declare(
 FetchContent_Declare(
     stm32_hal_driver
     GIT_REPOSITORY https://github.com/STMicroelectronics/${MCU_FAMILY_LOWER}xx-hal-driver.git
-    GIT_TAG v1.1.10
+    GIT_TAG ${STM32_HAL_DRIVER_TAG}
     GIT_SHALLOW TRUE
     SYSTEM
     EXCLUDE_FROM_ALL
@@ -41,6 +41,9 @@ target_include_directories(arm_cmsis SYSTEM INTERFACE
 add_library(arm::cmsis ALIAS arm_cmsis)
 
 add_library(stm32_cmsis INTERFACE)
+target_link_libraries(stm32_cmsis INTERFACE
+    arm_cmsis
+)
 target_include_directories(stm32_cmsis SYSTEM INTERFACE
     ${stm32_cmsis_SOURCE_DIR}/Include
 )
