@@ -68,13 +68,9 @@ int board_key_bind(enum board_butn_id id, struct butn *key) {
     GPIO_InitTypeDef config = (GPIO_InitTypeDef){
         .Pin = butn_ctx->pin,
         .Mode = GPIO_MODE_INPUT,
-        .Pull = GPIO_PULLUP,
+        .Pull = butn_ctx->active_low ? GPIO_PULLUP : GPIO_PULLDOWN,
         .Speed = GPIO_SPEED_FREQ_LOW,
     };
-
-    if (id == BOARD_KEY_WK_UP) {
-        config.Pull = GPIO_PULLDOWN;
-    }
 
     HAL_GPIO_Init(butn_ctx->port, &config);
 

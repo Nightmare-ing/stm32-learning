@@ -37,7 +37,7 @@
       "displayName": "Lab2.1: Control Led with Key",
       "configurePreset": "f103-hal",
       "jobs": 0,
-      "targets": ["stm32_template_lab2_1_key2led"]
+      "targets": ["stm32_learning_lab2_1_key2led"]
     },
     {
       "name": "host-test",
