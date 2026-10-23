@@ -11,12 +11,12 @@ int main(void) {
     struct led led1;
     board_led_bind(BOARD_LED_1, &led1);
 
+    led_on(&led0);
+    led_off(&led1);
     while (1) {
-        led_off(&led0);
-        led_on(&led1);
         HAL_Delay(500);
-        led_on(&led0);
-        led_off(&led1);
+        led_toggle(&led0);
+        led_toggle(&led1);
     }
 
     return 0;
