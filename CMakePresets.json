@@ -33,6 +33,13 @@
       "targets": ["stm32_learning_lab1_1_led"]
     },
     {
+      "name": "f103-hal-lab1-2-led-chaser",
+      "displayName": "Lab1.2: Led Chaser",
+      "configurePreset": "f103-hal",
+      "jobs": 0,
+      "targets": ["stm32_learning_lab1_2_led_chaser"]
+    },
+    {
       "name": "f103-hal-lab2-1-key2led",
       "displayName": "Lab2.1: Control Led with Key",
       "configurePreset": "f103-hal",
