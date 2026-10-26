@@ -36,6 +36,9 @@ target_link_libraries(board_atk_warship_f103_led
     PUBLIC
         components::led
     PRIVATE
+        ${PROJECT_NAME}::project_options
+        ${PROJECT_NAME}::compiler_warnings
+        ${PROJECT_NAME}::target_abi
         stm32_hal
 )
 
@@ -57,6 +60,9 @@ target_link_libraries(board_atk_warship_f103_button
     PUBLIC
         components::button
     PRIVATE
+        ${PROJECT_NAME}::project_options
+        ${PROJECT_NAME}::compiler_warnings
+        ${PROJECT_NAME}::target_abi
         stm32_hal
 )
 
