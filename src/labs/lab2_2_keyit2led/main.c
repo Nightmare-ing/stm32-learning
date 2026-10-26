@@ -8,7 +8,7 @@
 static struct butn key2;
 static struct led led0;
 
-static bool butn_triggered = false;
+static volatile bool butn_triggered = false;
 
 int main(void) {
     board_init();
@@ -24,14 +24,14 @@ int main(void) {
             uint32_t cur_tick = HAL_GetTick();
             if (cur_tick - last_tick >= 10) {
                 last_tick = cur_tick;
-                butn_tick(&key2);
                 butn_triggered = false;
-
-                enum butn_event event = butn_get_event(&key2);
-                if (event == BUTN_EVENT_PRESS) {
-                    led_toggle(&led0);
-                }
+                butn_tick(&key2);
             }
+        }
+
+        enum butn_event event = butn_get_event(&key2);
+        if (event == BUTN_EVENT_PRESS) {
+            led_toggle(&led0);
         }
     }
 
