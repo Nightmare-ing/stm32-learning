@@ -1,2 +1,3 @@
 add_subdirectory(labs/lab1_1_led EXCLUDE_FROM_ALL)
 add_subdirectory(labs/lab2_1_key2led EXCLUDE_FROM_ALL)
+add_subdirectory(labs/lab2_2_keyit2led EXCLUDE_FROM_ALL)
