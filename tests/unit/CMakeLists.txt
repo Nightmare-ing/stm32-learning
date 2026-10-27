@@ -26,3 +26,17 @@ target_link_libraries(test_button PRIVATE
 
 add_test(NAME test_button COMMAND test_button)
 
+# Build unit tests for the buzzer component
+add_executable(test_buzzer
+    test_buzzer.c
+)
+
+target_link_libraries(test_buzzer PRIVATE
+    ${PROJECT_NAME}::project_options
+    ${PROJECT_NAME}::compiler_warnings
+    ${PROJECT_NAME}::target_abi
+    components::buzzer
+)
+
+add_test(NAME test_buzzer COMMAND test_buzzer)
+

@@ -67,3 +67,27 @@ target_link_libraries(board_atk_warship_f103_button
 )
 
 add_library(bsp::button ALIAS board_atk_warship_f103_button)
+
+# Buzzer Adapter
+add_library(board_atk_warship_f103_buzzer STATIC)
+
+target_sources(board_atk_warship_f103_buzzer PRIVATE
+    adapters/buzzer.c
+)
+target_sources(board_atk_warship_f103_buzzer PUBLIC
+    FILE_SET HEADERS
+    BASE_DIRS include
+    FILES include/board/buzzer.h
+)
+
+target_link_libraries(board_atk_warship_f103_buzzer
+    PUBLIC
+        components::buzzer
+    PRIVATE
+        ${PROJECT_NAME}::project_options
+        ${PROJECT_NAME}::compiler_warnings
+        ${PROJECT_NAME}::target_abi
+        stm32_hal
+)
+
+add_library(bsp::buzzer ALIAS board_atk_warship_f103_buzzer)

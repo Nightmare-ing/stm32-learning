@@ -76,6 +76,7 @@ add_library(${PROJECT_NAME}::target_abi
 # ======================================================================
 add_subdirectory(components/led)
 add_subdirectory(components/button)
+add_subdirectory(components/buzzer)
 
 
 # ======================================================================
