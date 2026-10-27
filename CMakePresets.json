@@ -54,6 +54,13 @@
       "targets": ["stm32_learning_lab2_2_keyit2led"]
     },
     {
+      "name": "f103-hal-lab2-3-key2buzzer",
+      "displayName": "Lab2.3: Control Buzzer with Key",
+      "configurePreset": "f103-hal",
+      "jobs": 0,
+      "targets": ["stm32_learning_lab2_3_key2buzzer"]
+    },
+    {
       "name": "host-test",
       "displayName": "Host PC Unit Tests (Build)",
       "description": "Build all unit tests on host",
